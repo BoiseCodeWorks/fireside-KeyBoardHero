@@ -8,7 +8,6 @@ namespace KeyBoardHero.Project
     {
         public int Score { get; set; } = 0;
         public bool Playing { get; set; } = true;
-        public int Interval { get; set; } = 1250;
         public string Target { get; set; }
         public Timer Timer { get; set; }
         public List<string> Directions { get; set; } = new List<string>() {"Up", "Down", "Left", "Right"};
@@ -34,7 +33,7 @@ namespace KeyBoardHero.Project
         private void SetTimer()
         {
             Timer = new Timer();
-            Timer.Interval = Interval - (Score * 10);
+            Timer.Interval = 1250 - (Score * 10);
             Timer.Elapsed += NoTimeLeft;
             Timer.Start();
         }
